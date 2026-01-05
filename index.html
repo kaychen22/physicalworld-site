@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Physical World Fund — Physical AI Venture Capital</title>
+  <meta name="description" content="Physical World Fund is a pre-seed and seed venture capital fund investing in Physical AI — AI, robotics, and physical industries across labor, supply chains, and critical infrastructure." />
+
+  <!-- Canonical (set this once you choose www vs non-www) -->
+  <link rel="canonical" href="https://physicalworld.fund/" />
+
+  <!-- Preload the hero image for faster first paint -->
+  <link rel="preload" as="image" href="/physical-world-physical-ai.jpg" />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Physical World Fund — Backing Physical AI for the Real World" />
+  <meta property="og:description" content="Pre-seed and seed venture capital investing in Physical AI at the intersection of AI, robotics, and physical industries." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://physicalworld.fund/" />
+  <meta property="og:image" content="https://physicalworld.fund/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Physical World Fund",
+    "url": "https://physicalworld.fund/",
+    "description": "Pre-seed and seed venture capital fund investing in Physical AI — the intersection of artificial intelligence, robotics, and physical industries.",
+    "email": "info@physicalworld.fund"
+  }
+  </script>
+</head>
+
+<body>
+  <main class="stage" aria-label="Physical World Fund">
+
+    <!-- Minimal controls (not on the image) -->
+    <div class="topbar">
+      <button class="linklike" id="openAbout" type="button" aria-haspopup="dialog" aria-controls="aboutDialog">
+        About
+      </button>
+      <a class="linklike" href="mailto:info@physicalworld.fund">Contact</a>
+    </div>
+
+    <!-- The one photo -->
+    <img
+      class="hero"
+      src="/physical-world-physical-ai.jpg"
+      alt="Physical World Fund — Backing Physical AI for the Real World"
+      width="1536"
+      height="864"
+      loading="eager"
+      decoding="async"
+    />
+
+    <!-- SEO + accessibility content (user-available via About) -->
+    <dialog class="dialog" id="aboutDialog" aria-labelledby="aboutTitle">
+      <div class="dialog-inner">
+        <h1 id="aboutTitle">Physical World Fund</h1>
+
+        <p>
+          Physical World is a pre-seed and seed venture capital fund investing in Physical AI - the intersection of artificial intelligence, robotics, and physical industries.
+          We back founders building AI for civilization-scale challenges across labor, supply chains, and critical infrastructure.
+          The fund targets high conviction and speed in what we believe is the next frontier of value creation in these trillion-dollar markets.
+        </p>
+
+        <button class="close" id="closeAbout" type="button">Close</button>
+      </div>
+    </dialog>
+
+  </main>
+
+  <script>
+    const openBtn = document.getElementById('openAbout');
+    const closeBtn = document.getElementById('closeAbout');
+    const dialog = document.getElementById('aboutDialog');
+
+    openBtn.addEventListener('click', () => dialog.showModal());
+    closeBtn.addEventListener('click', () => dialog.close());
+
+    // Close when clicking outside the modal content
+    dialog.addEventListener('click', (e) => {
+      const rect = dialog.getBoundingClientRect();
+      const clickedInDialog = (
+        e.clientX >= rect.left && e.clientX <= rect.right &&
+        e.clientY >= rect.top && e.clientY <= rect.bottom
+      );
+      if (!clickedInDialog) dialog.close();
+    });
+  </script>
+</body>
+</html>
